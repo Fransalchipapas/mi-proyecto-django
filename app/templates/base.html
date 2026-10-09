@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load static %}
+<title>
+{% block title %}
+{{ titulo }}
+{% endblock %}
+</title>
+    <!--Css general-->
+    {% static 'app/css/styles.css' %}
+</head>
+
+<body>
+
+<header>
+{% block header %}
+
+<h1>{{ titulo }}</h1>
+<span>{{ mensaje }}</span>
+
+<nav class="">
+    <div class="container">
+        {% url 'inicio' %}Inicio</a>
+        {% url 'profesores' %}Profesores</a>
+        {% url 'cursos' %}Cursos</a>
+        {% url 'estudiantes' %}Estudiantes</a>
+        {% url 'entregables' %}Entregables</a>
+    </div>
+</nav>
+
+{% endblock %}
+</header>
+
+
+<main>
+{% block content %}
+{% endblock %}
+</main>
+
+</body>
+</html>
+
